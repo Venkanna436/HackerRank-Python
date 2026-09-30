@@ -1,9 +1,9 @@
 # Day 04 Challenge
-# Add your solution here.
+# Add your solution 
 
-def main():
-    pass
+n = int(input())
+integer_list = map(int, input().split())
+    
+t = tuple(integer_list)
+print(hash(t))
 
-
-if __name__ == "__main__":
-    main()
