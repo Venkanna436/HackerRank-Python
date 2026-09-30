@@ -24,4 +24,4 @@ HackerRank-Python/
 
 ## Notes
 
-Add your solution files inside each `Day_xx` folder as you progress through the challenges.
+The repository now includes a starter scaffold from Day_01 through Day_30, with each day in its own folder and a `solution.py` file ready for coding.
