@@ -1,45 +1,19 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+import math
 
+a = float(input("Enter a: "))
+b = float(input("Enter b: "))
+c = float(input("Enter c: "))
 
-class Solution:
-    def display(self, head):
-        current = head
-        while current:
-            print(current.data, end=' ')
-            current = current.next
-        print()
+D = b**2 - 4*a*c
 
-    def insert(self, head, data):
-        new_node = Node(data)
-
-        if head is None:
-            return new_node
-
-        current = head
-        while current.next is not None:
-            current = current.next
-
-        current.next = new_node
-        return head
-
-
-if __name__ == '__main__':
-    import sys
-
-    data = sys.stdin.read().strip().split()
-    if not data:
-        sys.exit()
-
-    n = int(data[0])
-    values = list(map(int, data[1:1 + n]))
-
-    head = None
-    mylist = Solution()
-
-    for value in values:
-        head = mylist.insert(head, value)
-
-    mylist.display(head)
+if D > 0:
+    print("Two distinct real roots")
+    print("Root 1 =", (-b + math.sqrt(D)) / (2*a))
+    print("Root 2 =", (-b - math.sqrt(D)) / (2*a))
+elif D == 0:
+    print("Two equal real roots")
+    print("Root =", -b / (2*a))
+else:
+    print("Two complex roots")
+    print("Root 1 =", complex(-b / (2*a), math.sqrt(-D) / (2*a)))
+    print("Root 2 =", complex(-b / (2*a), -math.sqrt(-D) / (2*a)))
